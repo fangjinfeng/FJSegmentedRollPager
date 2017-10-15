@@ -35,10 +35,11 @@ const CGFloat kDefaultAnimationTime = 0.3f;
 @property (nonatomic, strong) UIView *topStatusBarView;
 // 点击 返回 到 顶部view
 @property (nonatomic, strong) UIView *scrollToTopTapView;
-// detail contentView
-@property (nonatomic, strong) FJSegmentedPageDetailContentView *detailContentView;
 // navigation view
 @property (nonatomic, strong) FJNavigationHederView *navigationHederView;
+// detail contentView
+@property (nonatomic, strong) FJSegmentedPageDetailContentView *detailContentView;
+
 
 @end
 
@@ -59,6 +60,10 @@ const CGFloat kDefaultAnimationTime = 0.3f;
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.scrollToTopTapView removeFromSuperview];
+}
 
 #pragma mark --- private method
 // 设置 子控件

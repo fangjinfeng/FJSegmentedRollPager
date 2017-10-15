@@ -180,7 +180,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView reloadData];
-    self.selectedIndex = indexPath.item;
+    _selectedIndex = indexPath.item;
     [self setDidSelectItemDelegateWay];
 }
 

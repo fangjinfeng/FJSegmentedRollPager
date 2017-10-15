@@ -122,7 +122,6 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = kFJTableViewBackgroundColor;
         _tableView.contentInset = UIEdgeInsetsMake(kFJCourseNavigationHeaderViewHeight, 0, 0, 0);
-        _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 49.0f)];
     }
     return _tableView;
 }

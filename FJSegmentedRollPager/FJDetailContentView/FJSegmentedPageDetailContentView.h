@@ -12,6 +12,8 @@
 @class FJContentPageBaseViewController;
 
 @protocol FJDetailContentViewDelegate <NSObject>
+
+@optional
 // 获取 导航栏 移动 距离
 - (CGFloat)navigationTransformTyWithDetailContentView:(FJSegmentedPageDetailContentView *)detailContentView;
 // 滚动 代理
