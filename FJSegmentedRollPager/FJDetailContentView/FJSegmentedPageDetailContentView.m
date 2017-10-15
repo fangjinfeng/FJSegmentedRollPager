@@ -7,20 +7,20 @@
 //
 
 #import "FJConfigModel.h"
-#import "FJDetailContentView.h"
+#import "FJSegmentedPageDetailContentView.h"
 #import "FJCourseClassifyDefine.h"
 #import "FJPageCollectionViewCell.h"
-#import "FJDetailContentBaseViewController.h"
+#import "FJContentPageBaseViewController.h"
 
 
-@interface FJDetailContentView()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface FJSegmentedPageDetailContentView()<UICollectionViewDataSource, UICollectionViewDelegate>
 // page collection
 @property (nonatomic, strong) UICollectionView *pageCollectionView;
 // page flowLayout
 @property (nonatomic, strong) UICollectionViewFlowLayout *pageFlowLayout;
 @end
 
-@implementation FJDetailContentView
+@implementation FJSegmentedPageDetailContentView
 
 
 #pragma mark --- init method
@@ -40,7 +40,7 @@
     if (self.viewControllerArray.count == 0) {
         [viewArray enumerateObjectsUsingBlock:^(FJConfigModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
             Class clazz = NSClassFromString(obj.viewControllerStr);
-            FJDetailContentBaseViewController *baseViewController = [[clazz alloc] init];
+            FJContentPageBaseViewController *baseViewController = [[clazz alloc] init];
             baseViewController.currentIndex = idx;
             baseViewController.viewControllerParam = obj.viewControllerParam;
             [self.viewControllerArray addObject:baseViewController];
@@ -63,7 +63,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     //页面
     FJPageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJPageCollectionViewCellId forIndexPath:indexPath];
-    FJDetailContentBaseViewController *baseViewController = self.viewControllerArray[indexPath.row];
+    FJContentPageBaseViewController *baseViewController = self.viewControllerArray[indexPath.row];
     [cell configCellWithViewController:baseViewController];
     return cell;
 }
@@ -87,7 +87,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:selectedIndex:)]) {
         [self.delegate detailContentView:self selectedIndex:index];
         if (self.viewControllerArray.count > 0) {
-            FJDetailContentBaseViewController *baseViewController = self.viewControllerArray[index];
+            FJContentPageBaseViewController *baseViewController = self.viewControllerArray[index];
             
             if (baseViewController.tableView.contentOffset.y < -kFJNavigationSearchViewHeight) {
                 CGFloat tranformTy = [self.delegate navigationTransformTyWithDetailContentView:self];
@@ -135,7 +135,7 @@
 #pragma mark --- getter method
 
 // viewControll array
-- (NSMutableArray <FJDetailContentBaseViewController *>*)viewControllerArray {
+- (NSMutableArray <FJContentPageBaseViewController *>*)viewControllerArray {
     if (!_viewControllerArray) {
         _viewControllerArray = [NSMutableArray array];
     }

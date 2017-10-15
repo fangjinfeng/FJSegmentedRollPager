@@ -1,7 +1,7 @@
 
 
 //
-//  FJTitleTagSectionView.m
+//  FJSegmentdTitleTagSectionView.m
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
@@ -9,9 +9,9 @@
 //
 
 #import "UIView+Extension.h"
-#import "FJTitleTagSectionView.h"
+#import "FJSegmentdTitleTagSectionView.h"
 #import "FJCourseClassifyDefine.h"
-#import "FJTagCollectionViewCell.h"
+#import "FJSegmentedTagTitleCell.h"
 
 
 static const CGFloat kFJBottomLineViewHeight = 0.5f;
@@ -19,7 +19,7 @@ static const CGFloat kFJIndicatorViewHeight = 2.0f;
 static const CGFloat kFJIndicatorViewWidth = 56.0f;
 static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 
-@interface FJTitleTagSectionView()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface FJSegmentdTitleTagSectionView()<UICollectionViewDelegate, UICollectionViewDataSource>
 // 指示器 indicator
 @property (nonatomic, strong) UIView *indicatorView;
 // 分割 view
@@ -33,7 +33,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 
 @end
 
-@implementation FJTitleTagSectionView
+@implementation FJSegmentdTitleTagSectionView
 
 #pragma mark --- init method
 
@@ -66,8 +66,8 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
         self.tagItemSize = CGSizeMake(self.frame.size.width / titleArray.count, self.frame.size.height);
     }
     else {
-        self.tagFlowLayout.minimumLineSpacing = kFJTitleTagSectionViewCellSpacing; //最小线间距
-        self.tagFlowLayout.minimumInteritemSpacing = kFJTitleTagSectionViewCellSpacing;
+        self.tagFlowLayout.minimumLineSpacing = kFJSegmentdTitleTagSectionViewCellSpacing; //最小线间距
+        self.tagFlowLayout.minimumInteritemSpacing = kFJSegmentdTitleTagSectionViewCellSpacing;
     }
     self.tagFlowLayout.itemSize = self.tagItemSize;
     CGRect indicatorViewFrame = self.indicatorView.frame;
@@ -98,7 +98,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
         
         CGFloat indicatorViewX = cellInSuperview.origin.x- 2.5;
         if (indicatorViewX < 0) {
-            indicatorViewX = kFJTitleTagSectionViewHorizontalEdgeSpacing - 2.5;
+            indicatorViewX = kFJSegmentdTitleTagSectionViewHorizontalEdgeSpacing - 2.5;
         }
         self.indicatorView.x = indicatorViewX;
     }
@@ -112,10 +112,10 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 // 是否 超过 限制
 - (void)beyondWidthLimitWithTitleArray:(NSArray *)titleArray {
     self.isBeyondLimitWidth = NO;
-    CGFloat tmpWidth = kFJTitleTagSectionViewCellSpacing;
+    CGFloat tmpWidth = kFJSegmentdTitleTagSectionViewCellSpacing;
     for (NSString *tmpTitle in titleArray) {
         tmpWidth += [self titleWidthWithTitle:tmpTitle];
-        tmpWidth += kFJTitleTagSectionViewCellSpacing;
+        tmpWidth += kFJSegmentdTitleTagSectionViewCellSpacing;
     }
     
     if (tmpWidth > self.frame.size.width) {
@@ -146,7 +146,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FJTagCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJTagCollectionViewCellId forIndexPath:indexPath];
+    FJSegmentedTagTitleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFJSegmentedTagTitleCellId forIndexPath:indexPath];
     cell.titleStr = self.tagTitleArray[indexPath.item];
     [cell setSelected:(self.selectedIndex == indexPath.item) ? YES:NO];
     return cell;
@@ -156,7 +156,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 {
     CGFloat edgeSpacing = 0;
     if (self.isBeyondLimitWidth) {
-        edgeSpacing = kFJTitleTagSectionViewHorizontalEdgeSpacing;
+        edgeSpacing = kFJSegmentdTitleTagSectionViewHorizontalEdgeSpacing;
     }
     return UIEdgeInsetsMake(0, edgeSpacing, 0, edgeSpacing);
 }
@@ -270,7 +270,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 - (UICollectionView *)tagCollectionView {
     if (!_tagCollectionView) {
         _tagCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:self.tagFlowLayout];
-        [_tagCollectionView registerClass:[FJTagCollectionViewCell class] forCellWithReuseIdentifier:kFJTagCollectionViewCellId];
+        [_tagCollectionView registerClass:[FJSegmentedTagTitleCell class] forCellWithReuseIdentifier:kFJSegmentedTagTitleCellId];
         _tagCollectionView.dataSource = self;
         _tagCollectionView.delegate = self;
         _tagCollectionView.backgroundColor = [UIColor clearColor];

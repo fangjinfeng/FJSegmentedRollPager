@@ -1,5 +1,5 @@
 //
-//  FJTagCollectionViewCell.h
+//  FJSegmentedTagTitleCell.h
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 // cell id
-UIKIT_EXTERN NSString * const kFJTagCollectionViewCellId;
+UIKIT_EXTERN NSString * const kFJSegmentedTagTitleCellId;
 
-@interface FJTagCollectionViewCell : UICollectionViewCell
+@interface FJSegmentedTagTitleCell : UICollectionViewCell
 // 标题 内容
 @property (nonatomic, copy)   NSString *titleStr;
 // 标题 正常 字体

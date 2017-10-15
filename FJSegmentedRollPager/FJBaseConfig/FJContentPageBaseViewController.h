@@ -1,5 +1,5 @@
 //
-//  FJDetailContentBaseViewController.h
+//  FJContentPageBaseViewController.h
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FJDetailContentBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface FJContentPageBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 // 当前 索引
 @property (nonatomic, assign) NSInteger   currentIndex;

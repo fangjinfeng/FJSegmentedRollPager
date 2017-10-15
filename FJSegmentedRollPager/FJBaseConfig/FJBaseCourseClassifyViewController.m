@@ -9,8 +9,8 @@
 //
 
 #import "UITabBar+Gradient.h"
-#import "FJDetailContentView.h"
-#import "FJTitleTagSectionView.h"
+#import "FJSegmentedPageDetailContentView.h"
+#import "FJSegmentdTitleTagSectionView.h"
 #import "FJNavigationHederView.h"
 #import "FJCourseClassifyDefine.h"
 #import "FJNavigationSearchView.h"
@@ -27,7 +27,7 @@ const CGFloat kNavigationBarHeight = 104.0f;
 const CGFloat kDefaultAnimationTime = 0.3f;
 
 
-@interface FJBaseCourseClassifyViewController ()<FJTitleTagSectionViewDelegate,FJDetailContentViewDelegate> {
+@interface FJBaseCourseClassifyViewController ()<FJSegmentdTitleTagSectionViewDelegate,FJDetailContentViewDelegate> {
     CGFloat _originalOffsetY; //上一次偏移量
 }
 
@@ -36,7 +36,7 @@ const CGFloat kDefaultAnimationTime = 0.3f;
 // 点击 返回 到 顶部view
 @property (nonatomic, strong) UIView *scrollToTopTapView;
 // detail contentView
-@property (nonatomic, strong) FJDetailContentView *detailContentView;
+@property (nonatomic, strong) FJSegmentedPageDetailContentView *detailContentView;
 // navigation view
 @property (nonatomic, strong) FJNavigationHederView *navigationHederView;
 
@@ -231,26 +231,26 @@ const CGFloat kDefaultAnimationTime = 0.3f;
 
 #pragma mark --- custom delegate
 
-/******************************* FJTitleTagSectionViewDelegate ******************************/
+/******************************* FJSegmentdTitleTagSectionViewDelegate ******************************/
 
-- (void)titleSectionView:(FJTitleTagSectionView *)titleSectionView clickIndex:(NSInteger)index {
+- (void)titleSectionView:(FJSegmentdTitleTagSectionView *)titleSectionView clickIndex:(NSInteger)index {
      self.detailContentView.selectedIndex = index;
 }
 
 
 /******************************* FJDetailContentViewDelegate ******************************/
-- (void)detailContentView:(FJDetailContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex {
+- (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex {
     
     self.navigationHederView.tagSecionView.selectedIndex = selectedIndex;
 }
 
 // 是否 偏移 顶部 导航栏
-- (void)detailContentView:(FJDetailContentView *)detailContentView isOffsetNavigationHeaderView:(BOOL)isoffSet {
+- (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView isOffsetNavigationHeaderView:(BOOL)isoffSet {
     [self showNavigationBarAndStatusBar];
 }
 
 // 获取 导航栏 移动 距离
-- (CGFloat)navigationTransformTyWithDetailContentView:(FJDetailContentView *)detailContentView {
+- (CGFloat)navigationTransformTyWithDetailContentView:(FJSegmentedPageDetailContentView *)detailContentView {
     return self.navigationHederView.transform.ty;
 }
 
@@ -306,9 +306,9 @@ const CGFloat kDefaultAnimationTime = 0.3f;
 
 
 // detail contentView
-- (FJDetailContentView *)detailContentView {
+- (FJSegmentedPageDetailContentView *)detailContentView {
     if (!_detailContentView) {
-        _detailContentView = [[FJDetailContentView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationHederView.frame) - kFJNavigationSearchViewHeight, self.view.frame.size.width, self.view.frame.size.height)];
+        _detailContentView = [[FJSegmentedPageDetailContentView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationHederView.frame) - kFJNavigationSearchViewHeight, self.view.frame.size.width, self.view.frame.size.height)];
         _detailContentView.delegate = self;
     }
     return _detailContentView;

@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class FJNavigationSearchView;
-@class FJTitleTagSectionView;
+@class FJSegmentdTitleTagSectionView;
 
 @interface FJNavigationHederView : UIView
 // search view
 @property (nonatomic, strong) FJNavigationSearchView *searchView;
 // tag sectionView
-@property (nonatomic, strong) FJTitleTagSectionView *tagSecionView;
+@property (nonatomic, strong) FJSegmentdTitleTagSectionView *tagSecionView;
 
 
 - (void)fj_setImageViewAlpha:(CGFloat)alpha;

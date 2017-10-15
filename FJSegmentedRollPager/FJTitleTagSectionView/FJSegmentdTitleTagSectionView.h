@@ -1,5 +1,5 @@
 //
-//  FJTitleTagSectionView.h
+//  FJSegmentdTitleTagSectionView.h
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class FJTitleTagSectionView;
+@class FJSegmentdTitleTagSectionView;
 // 代理
-@protocol FJTitleTagSectionViewDelegate <NSObject>
+@protocol FJSegmentdTitleTagSectionViewDelegate <NSObject>
 // 当前 点击 index
-- (void)titleSectionView:(FJTitleTagSectionView *)titleSectionView clickIndex:(NSInteger)index;
+- (void)titleSectionView:(FJSegmentdTitleTagSectionView *)titleSectionView clickIndex:(NSInteger)index;
 
 @end
 
-@interface FJTitleTagSectionView : UIView
+@interface FJSegmentdTitleTagSectionView : UIView
 // item size
 @property (nonatomic, assign) CGSize tagItemSize;
 // 指示器 高度
@@ -30,5 +30,5 @@
 // 标题 栏 高度
 @property (nonatomic, assign) CGFloat tagSectionViewHeight;
 // 代理
-@property (nonatomic, weak)   id <FJTitleTagSectionViewDelegate> delegate;
+@property (nonatomic, weak)   id <FJSegmentdTitleTagSectionViewDelegate> delegate;
 @end

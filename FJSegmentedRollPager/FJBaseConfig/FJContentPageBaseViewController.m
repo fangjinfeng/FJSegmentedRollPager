@@ -1,5 +1,5 @@
 //
-//  FJDetailContentBaseViewController.m
+//  FJContentPageBaseViewController.m
 //  FJDoubleDeckRollViewDemo
 //
 //  Created by fjf on 2017/6/9.
@@ -7,15 +7,15 @@
 //
 
 #import "FJCourseClassifyDefine.h"
-#import "FJDetailContentBaseViewController.h"
+#import "FJContentPageBaseViewController.h"
 
 
-@interface FJDetailContentBaseViewController ()
+@interface FJContentPageBaseViewController ()
 // 是否 停止 发送 滚动 通知
 @property (nonatomic, assign) BOOL isStopPostScrollNoti;
 @end
 
-@implementation FJDetailContentBaseViewController
+@implementation FJContentPageBaseViewController
 #pragma mark --- life circle
 - (void)viewDidLoad {
     [super viewDidLoad];

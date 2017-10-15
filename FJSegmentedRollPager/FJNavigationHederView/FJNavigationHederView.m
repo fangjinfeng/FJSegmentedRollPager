@@ -9,7 +9,7 @@
 
 #import "FJCourseClassifyDefine.h"
 #import "FJNavigationSearchView.h"
-#import "FJTitleTagSectionView.h"
+#import "FJSegmentdTitleTagSectionView.h"
 #import "FJNavigationHederView.h"
 
 
@@ -77,9 +77,9 @@
 
 
 // 分类 栏
-- (FJTitleTagSectionView *)tagSecionView {
+- (FJSegmentdTitleTagSectionView *)tagSecionView {
     if (!_tagSecionView) {
-        _tagSecionView = [[FJTitleTagSectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchView.frame), self.frame.size.width, kFJCourseClassifySectionHeight)];
+        _tagSecionView = [[FJSegmentdTitleTagSectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchView.frame), self.frame.size.width, kFJCourseClassifySectionHeight)];
     }
     return _tagSecionView;
 }

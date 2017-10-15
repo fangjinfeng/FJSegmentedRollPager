@@ -20,7 +20,7 @@
 #define kFJCourseClassifySectionHeight 40.0f
 
 // 标题栏 cell  间距
-#define kFJTitleTagSectionViewCellSpacing 32.0f
+#define kFJSegmentdTitleTagSectionViewCellSpacing 32.0f
 
 // 偏移 距离 限制
 #define  kFJNavigationHederViewContentOffset  40.0f
@@ -29,7 +29,7 @@
 #define kFJCourseNavigationHeaderViewHeight 104.0f
 
 // 标题栏 水平 间距
-#define kFJTitleTagSectionViewHorizontalEdgeSpacing 12.0f
+#define kFJSegmentdTitleTagSectionViewHorizontalEdgeSpacing 12.0f
 
 
 
