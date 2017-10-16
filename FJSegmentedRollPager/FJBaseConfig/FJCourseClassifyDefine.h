@@ -97,6 +97,10 @@ static NSString *const kFJCourseClassifySubScrollViewScrollToTopNoti = @"kFJCour
 
 // 指示条 默认 宽度
 #define kFJSegmentedIndicatorViewWidth      56.0f
+
+// 指示条 默认 扩展宽度
+#define kFJSegmentedIndicatorViewExtendWidth      6.0f
+
 // 标题 默认 宽度
 #define kFJSegmentedTitleViewTitleWidth     80.0f
 

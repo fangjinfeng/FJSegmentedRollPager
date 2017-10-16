@@ -84,7 +84,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
     
     CGFloat titleWidth = [tagTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kFJSegmentedTitleFontSize} context:nil].size.width;
     
-    self.indicatorWidth = titleWidth + 5;
+    self.indicatorWidth = titleWidth + kFJSegmentedIndicatorViewExtendWidth;
     self.indicatorView.width = self.indicatorWidth;
     
     if (self.isBeyondLimitWidth) {
@@ -96,9 +96,9 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
         //获取cell在当前屏幕的位置
         CGRect cellInSuperview = [self.tagCollectionView convertRect:cellInCollection toView:self];
         
-        CGFloat indicatorViewX = cellInSuperview.origin.x- 2.5;
+        CGFloat indicatorViewX = cellInSuperview.origin.x- kFJSegmentedIndicatorViewExtendWidth/2.0f;
         if (indicatorViewX < 0) {
-            indicatorViewX = kFJSegmentdTitleTagSectionViewHorizontalEdgeSpacing - 2.5;
+            indicatorViewX = kFJSegmentdTitleTagSectionViewHorizontalEdgeSpacing - kFJSegmentedIndicatorViewExtendWidth/2.0f;
         }
         self.indicatorView.x = indicatorViewX;
     }
@@ -109,7 +109,7 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 }
 
 
-// 是否 超过 限制
+// 是否 超过 屏幕宽度 限制
 - (void)beyondWidthLimitWithTitleArray:(NSArray *)titleArray {
     self.isBeyondLimitWidth = NO;
     CGFloat tmpWidth = kFJSegmentdTitleTagSectionViewCellSpacing;
@@ -231,13 +231,13 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 - (CGFloat)indicatorX {
     CGFloat indicatorViewX = 0;
     if (self.selectedIndex == 0) {
-        indicatorViewX = 12.0f - 2.5f;
+        indicatorViewX = kFJSegmentdTitleTagSectionViewHorizontalEdgeSpacing - kFJSegmentedIndicatorViewExtendWidth/2.0;
     }
     else if(self.selectedIndex < (self.tagTitleArray.count - 1)){
         indicatorViewX = 0;
     }
     else if(self.selectedIndex == (self.tagTitleArray.count - 1)){
-        indicatorViewX = 10;
+        indicatorViewX = kFJSegmentdTitleTagSectionViewHorizontalEdgeSpacing - kFJSegmentedIndicatorViewExtendWidth/2.0;
     }
     return indicatorViewX;
 }
