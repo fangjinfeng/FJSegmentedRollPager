@@ -32,6 +32,7 @@
 		3058B4761F920F7300893D2D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4741F920F7300893D2D /* UIView+Extension.m */; };
 		3058B4791F9211F200893D2D /* LETextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4771F9211F200893D2D /* LETextField.m */; };
 		306F3A5B1FB197B100401AB8 /* FJSegmentedPageDetailContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4501F920ED800893D2D /* FJSegmentedPageDetailContentView.m */; };
+		306F3A611FB1A4F400401AB8 /* FJShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 306F3A601FB1A4F400401AB8 /* FJShopViewController.m */; };
 		308FFF201F7E1EC7003CE28E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFF1F1F7E1EC7003CE28E /* AppDelegate.m */; };
 		308FFF231F7E1EC7003CE28E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFF221F7E1EC7003CE28E /* ViewController.m */; };
 		308FFF261F7E1EC7003CE28E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF241F7E1EC7003CE28E /* Main.storyboard */; };
@@ -93,6 +94,8 @@
 		3058B4751F920F7300893D2D /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		3058B4771F9211F200893D2D /* LETextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LETextField.m; sourceTree = "<group>"; };
 		3058B4781F9211F200893D2D /* LETextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LETextField.h; sourceTree = "<group>"; };
+		306F3A5F1FB1A4F400401AB8 /* FJShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJShopViewController.h; sourceTree = "<group>"; };
+		306F3A601FB1A4F400401AB8 /* FJShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FJShopViewController.m; sourceTree = "<group>"; };
 		308FFF1B1F7E1EC7003CE28E /* FJSegmentedRollPageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FJSegmentedRollPageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		308FFF1E1F7E1EC7003CE28E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		308FFF1F1F7E1EC7003CE28E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				308FFF1F1F7E1EC7003CE28E /* AppDelegate.m */,
 				308FFF211F7E1EC7003CE28E /* ViewController.h */,
 				308FFF221F7E1EC7003CE28E /* ViewController.m */,
+				306F3A5F1FB1A4F400401AB8 /* FJShopViewController.h */,
+				306F3A601FB1A4F400401AB8 /* FJShopViewController.m */,
 				30AB0E881F9319C100B95759 /* FJFirstShopViewController.h */,
 				30AB0E891F9319C100B95759 /* FJFirstShopViewController.m */,
 				30AB0E8B1F9319CA00B95759 /* FJSecondShopViewController.h */,
@@ -431,6 +436,7 @@
 				3058B45E1F920EE900893D2D /* FJBaseCourseClassifyViewController.m in Sources */,
 				3058B45F1F920EE900893D2D /* FJConfigModel.h in Sources */,
 				3058B4601F920EE900893D2D /* FJConfigModel.m in Sources */,
+				306F3A611FB1A4F400401AB8 /* FJShopViewController.m in Sources */,
 				3058B4611F920EE900893D2D /* FJCourseClassifyDefine.h in Sources */,
 				3058B4621F920EE900893D2D /* FJContentPageBaseViewController.h in Sources */,
 				3058B4631F920EE900893D2D /* FJContentPageBaseViewController.m in Sources */,

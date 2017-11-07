@@ -27,7 +27,7 @@ const CGFloat kNavigationBarHeight = 104.0f;
 const CGFloat kDefaultAnimationTime = 0.3f;
 
 
-@interface FJBaseCourseClassifyViewController ()<FJSegmentdTitleTagSectionViewDelegate,FJDetailContentViewDelegate> {
+@interface FJBaseCourseClassifyViewController ()<FJSegmentdTitleTagSectionViewDelegate,FJDetailContentViewDelegate,UIGestureRecognizerDelegate> {
     CGFloat _originalOffsetY; //上一次偏移量
 }
 
@@ -58,12 +58,17 @@ const CGFloat kDefaultAnimationTime = 0.3f;
     [super viewWillAppear:animated];
     [[self statusBar] addSubview:self.scrollToTopTapView];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+ 
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.scrollToTopTapView removeFromSuperview];
 }
+
+
 
 #pragma mark --- private method
 // 设置 子控件
@@ -73,6 +78,7 @@ const CGFloat kDefaultAnimationTime = 0.3f;
     [self.view addSubview:self.detailContentView];
     [self.view bringSubviewToFront:self.navigationHederView];
     [self.view addSubview:self.topStatusBarView];
+    
 }
 
 // 添加 监听 通知

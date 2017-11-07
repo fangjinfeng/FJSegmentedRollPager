@@ -169,9 +169,12 @@ static const CGFloat kFJTitleTagSectionTitleWidth = 80.0f;
 /***************************** UICollectionViewDelegate *************************/
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    _selectedIndex = indexPath.item;
-    [self setDidSelectItemDelegateWay];
+    if (_selectedIndex != indexPath.row) {
+        _selectedIndex = indexPath.item;
+        [self setDidSelectItemDelegateWay];
+    }
 }
+
 
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {

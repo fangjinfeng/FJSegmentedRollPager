@@ -60,7 +60,7 @@ static NSString *const kFJCourseClassifySubScrollViewScrollToTopNoti = @"kFJCour
 #define kFJSegmentedTitleSelectedColor FJColorFromRGB(0x51D6AA)
 
 // 分段 标题 字体 高亮 颜色
-#define kFJSegmentedTitleHighlightColor FJColorFromRGB(0x51D6AA)
+#define kFJSegmentedTitleHighlightColor FJColorFromRGB(0xA7A7A7)
 
 // 分段 标题 字体 高亮 颜色
 #define kFJSegmentedIndicatorViewColor FJColorFromRGB(0x51D6AA)
