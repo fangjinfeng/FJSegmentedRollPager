@@ -1,6 +1,6 @@
 # FJSegmentedRollPager
 
-![简书链接FJSegmentedRollPager 介绍](http://www.jianshu.com/p/b29d1f5bd69c)
+#简书链接: ![FJSegmentedRollPager 介绍](http://www.jianshu.com/p/b29d1f5bd69c)
 
 # 效果图:
 
