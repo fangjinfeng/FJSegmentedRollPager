@@ -22,4 +22,6 @@ UIKIT_EXTERN NSString * const kFJSegmentedTagTitleCellId;
 @property (nonatomic, strong) UIColor *titleSelectedColor;
 // 标题 高亮 颜色
 @property (nonatomic, strong) UIColor *titleHighlightColor;
+// 标题
+@property (nonatomic, strong) UILabel *titleLabel;
 @end

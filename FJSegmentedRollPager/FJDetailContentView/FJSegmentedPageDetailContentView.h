@@ -17,9 +17,7 @@
 // 获取 导航栏 移动 距离
 - (CGFloat)navigationTransformTyWithDetailContentView:(FJSegmentedPageDetailContentView *)detailContentView;
 // 滚动 代理
-- (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView scrollView:(UIScrollView *)scrollView;
-// 滚动 和 点击 代理
-- (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex;
+- (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView currentIndex:(NSInteger)currentIndex;
 // 是否 偏移 顶部 导航栏
 - (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView isOffsetNavigationHeaderView:(BOOL)isoffSet;
 

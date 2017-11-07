@@ -19,7 +19,6 @@
 		3058B4661F920EE900893D2D /* UITabBar+Gradient.h in Sources */ = {isa = PBXBuildFile; fileRef = 3058B44C1F920ED800893D2D /* UITabBar+Gradient.h */; };
 		3058B4671F920EE900893D2D /* UITabBar+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B44D1F920ED800893D2D /* UITabBar+Gradient.m */; };
 		3058B4681F920EE900893D2D /* FJSegmentedPageDetailContentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3058B44F1F920ED800893D2D /* FJSegmentedPageDetailContentView.h */; };
-		3058B4691F920EE900893D2D /* FJSegmentedPageDetailContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4501F920ED800893D2D /* FJSegmentedPageDetailContentView.m */; };
 		3058B46A1F920EE900893D2D /* FJPageCollectionViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4511F920ED800893D2D /* FJPageCollectionViewCell.h */; };
 		3058B46B1F920EE900893D2D /* FJPageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4521F920ED800893D2D /* FJPageCollectionViewCell.m */; };
 		3058B46C1F920EE900893D2D /* FJNavigationHederView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4541F920ED800893D2D /* FJNavigationHederView.h */; };
@@ -32,6 +31,7 @@
 		3058B4731F920EE900893D2D /* FJSegmentdTitleTagSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B45C1F920ED800893D2D /* FJSegmentdTitleTagSectionView.m */; };
 		3058B4761F920F7300893D2D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4741F920F7300893D2D /* UIView+Extension.m */; };
 		3058B4791F9211F200893D2D /* LETextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4771F9211F200893D2D /* LETextField.m */; };
+		306F3A5B1FB197B100401AB8 /* FJSegmentedPageDetailContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3058B4501F920ED800893D2D /* FJSegmentedPageDetailContentView.m */; };
 		308FFF201F7E1EC7003CE28E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFF1F1F7E1EC7003CE28E /* AppDelegate.m */; };
 		308FFF231F7E1EC7003CE28E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFF221F7E1EC7003CE28E /* ViewController.m */; };
 		308FFF261F7E1EC7003CE28E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 308FFF241F7E1EC7003CE28E /* Main.storyboard */; };
@@ -426,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				306F3A5B1FB197B100401AB8 /* FJSegmentedPageDetailContentView.m in Sources */,
 				3058B45D1F920EE900893D2D /* FJBaseCourseClassifyViewController.h in Sources */,
 				3058B45E1F920EE900893D2D /* FJBaseCourseClassifyViewController.m in Sources */,
 				3058B45F1F920EE900893D2D /* FJConfigModel.h in Sources */,
@@ -439,7 +440,6 @@
 				30AB0E8D1F9319CA00B95759 /* FJSecondShopViewController.m in Sources */,
 				3058B4671F920EE900893D2D /* UITabBar+Gradient.m in Sources */,
 				3058B4681F920EE900893D2D /* FJSegmentedPageDetailContentView.h in Sources */,
-				3058B4691F920EE900893D2D /* FJSegmentedPageDetailContentView.m in Sources */,
 				3058B46A1F920EE900893D2D /* FJPageCollectionViewCell.h in Sources */,
 				3058B46B1F920EE900893D2D /* FJPageCollectionViewCell.m in Sources */,
 				3058B46C1F920EE900893D2D /* FJNavigationHederView.h in Sources */,

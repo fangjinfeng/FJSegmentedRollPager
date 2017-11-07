@@ -7,9 +7,9 @@
 //
 
 #import "FJConfigModel.h"
-#import "FJSegmentedPageDetailContentView.h"
 #import "FJCourseClassifyDefine.h"
 #import "FJPageCollectionViewCell.h"
+#import "FJSegmentedPageDetailContentView.h"
 #import "FJContentPageBaseViewController.h"
 
 
@@ -79,33 +79,46 @@
         [self.delegate detailContentView:self isOffsetNavigationHeaderView:isOffset];
     }
 }
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if(self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:scrollView:)]){
-        [self.delegate detailContentView:self scrollView:scrollView];
-    }
     NSInteger index = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
-    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:selectedIndex:)]) {
-        [self.delegate detailContentView:self selectedIndex:index];
-        if (self.viewControllerArray.count > 0) {
-            FJContentPageBaseViewController *baseViewController = self.viewControllerArray[index];
-            
-            if (baseViewController.tableView.contentOffset.y < -kFJNavigationSearchViewHeight) {
-                CGFloat tranformTy = [self.delegate navigationTransformTyWithDetailContentView:self];
-                if (baseViewController.tableView.contentSize.height > baseViewController.tableView.height && tranformTy < 0) {
-                    
-                    [[NSNotificationCenter defaultCenter] postNotificationName:kFJCourseClassifySubScrollViewOffsetNoti object: [NSNumber numberWithBool:YES]];
-                    CGPoint contentOffset = baseViewController.tableView.contentOffset;
-                    contentOffset.y = -kFJCourseNavigationHeaderViewHeight - tranformTy;
-                    baseViewController.tableView.contentOffset = contentOffset;
-                    [[NSNotificationCenter defaultCenter] postNotificationName:kFJCourseClassifySubScrollViewOffsetNoti object: [NSNumber numberWithBool:NO]];
-                }
-                else {
-                    [self setIsOffsetNavigationHeaderViewDelegateWithIsOffset:NO];
-                }
+    if (self.viewControllerArray.count > 0) {
+        FJContentPageBaseViewController *baseViewController = self.viewControllerArray[index];
+        
+        if (baseViewController.tableView.contentOffset.y < -kFJNavigationSearchViewHeight) {
+            CGFloat tranformTy = [self.delegate navigationTransformTyWithDetailContentView:self];
+            if (baseViewController.tableView.contentSize.height > baseViewController.tableView.height && tranformTy < 0) {
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kFJCourseClassifySubScrollViewOffsetNoti object: [NSNumber numberWithBool:YES]];
+                CGPoint contentOffset = baseViewController.tableView.contentOffset;
+                contentOffset.y = -kFJCourseNavigationHeaderViewHeight - tranformTy;
+                baseViewController.tableView.contentOffset = contentOffset;
+                [[NSNotificationCenter defaultCenter] postNotificationName:kFJCourseClassifySubScrollViewOffsetNoti object: [NSNumber numberWithBool:NO]];
+            }
+            else {
+                [self setIsOffsetNavigationHeaderViewDelegateWithIsOffset:NO];
             }
         }
     }
+    
+    NSInteger currentIndex = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:currentIndex:)]) {
+        [self.delegate detailContentView:self currentIndex:currentIndex];
+    }
 }
+
+
+/** 滚动减速完成时再更新title的位置 */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+
+     NSInteger currentIndex = (NSInteger)roundf(scrollView.contentOffset.x / self.pageCollectionView.frame.size.width);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(detailContentView:currentIndex:)]) {
+        [self.delegate detailContentView:self currentIndex:currentIndex];
+    }
+}
+
 
 #pragma mark --- setter method
 // 设置 选中 索引

@@ -14,8 +14,7 @@
 NSString * const kFJSegmentedTagTitleCellId = @"kFJSegmentedTagTitleCellId";
 
 @interface FJSegmentedTagTitleCell()
-// 标题
-@property (nonatomic, strong) UILabel *titleLabel;
+
 @end
 
 @implementation FJSegmentedTagTitleCell

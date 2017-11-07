@@ -244,10 +244,11 @@ const CGFloat kDefaultAnimationTime = 0.3f;
 
 
 /******************************* FJDetailContentViewDelegate ******************************/
-- (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView selectedIndex:(NSInteger)selectedIndex {
+- (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView currentIndex:(NSInteger)currentIndex {
     
-    self.navigationHederView.tagSecionView.selectedIndex = selectedIndex;
+    self.navigationHederView.tagSecionView.selectedIndex = currentIndex;
 }
+
 
 // 是否 偏移 顶部 导航栏
 - (void)detailContentView:(FJSegmentedPageDetailContentView *)detailContentView isOffsetNavigationHeaderView:(BOOL)isoffSet {

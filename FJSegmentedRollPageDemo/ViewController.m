@@ -26,10 +26,10 @@
 - (void)configViewControllerModelArray {
     NSMutableArray *tmpArray = [NSMutableArray array];
     [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
-    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
-    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
-    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
-    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
+    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程dsfsdf" viewControllerStr:@"FJSecondShopViewController"]];
+    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介fdsfsd" viewControllerStr:@"FJFirstShopViewController"]];
+    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程afa" viewControllerStr:@"FJSecondShopViewController"]];
+    [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介fsdfafsdfasdf" viewControllerStr:@"FJFirstShopViewController"]];
     [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
     [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列简介" viewControllerStr:@"FJFirstShopViewController"]];
     [tmpArray addObject:[[FJConfigModel alloc] initWithTitleStr:@"系列课程" viewControllerStr:@"FJSecondShopViewController"]];
