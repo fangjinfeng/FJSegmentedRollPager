@@ -1,10 +1,12 @@
 # FJSegmentedRollPager
 
-![简书链接](http://www.jianshu.com/p/b29d1f5bd69c)
+![简书链接FJSegmentedRollPager 介绍](http://www.jianshu.com/p/b29d1f5bd69c)
 
 # 效果图:
 
 ![滚动栏.gif](http://upload-images.jianshu.io/upload_images/2252551-bf5ad6725da7fd87.gif?imageMogr2/auto-orient/strip)
+
+![FJSegmentedRollPager.gif](https://github.com/fangjinfeng/FJSegmentedRollPager/blob/master/FJSegmentedRollPageDemo/Snapshots/FJSegmentedRollPager.gif)
 
 **需求:**
 - 分类栏和搜索框作为一个整体，视作页面的头部，同时每个分类下面对应一个分类页面
