@@ -66,9 +66,8 @@ const CGFloat kDefaultAnimationTime = 0.3f;
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.scrollToTopTapView removeFromSuperview];
+     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
-
-
 
 #pragma mark --- private method
 // 设置 子控件

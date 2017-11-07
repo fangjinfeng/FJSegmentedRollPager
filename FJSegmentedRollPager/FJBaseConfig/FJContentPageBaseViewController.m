@@ -11,7 +11,7 @@
 #import "FJContentPageBaseViewController.h"
 
 
-@interface FJContentPageBaseViewController ()
+@interface FJContentPageBaseViewController ()<UIGestureRecognizerDelegate>
 // 是否 停止 发送 滚动 通知
 @property (nonatomic, assign) BOOL isStopPostScrollNoti;
 @end
@@ -25,6 +25,7 @@
     
     [self setupDetailContentViewControls];
 }
+
 
 
 #pragma mark --- private method

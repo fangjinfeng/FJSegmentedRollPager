@@ -14,7 +14,8 @@
 NSString * const kFJSegmentedTagTitleCellId = @"kFJSegmentedTagTitleCellId";
 
 @interface FJSegmentedTagTitleCell()
-
+// 标题
+@property (nonatomic, strong) UILabel *titleLabel;
 @end
 
 @implementation FJSegmentedTagTitleCell
@@ -51,10 +52,11 @@ NSString * const kFJSegmentedTagTitleCellId = @"kFJSegmentedTagTitleCellId";
     }
 }
 
+
+
 // 设置 选中 
-- (void)setSelected:(BOOL)selected {
-    [super setSelected:selected];
-    if (selected) {
+- (void)setSelectedStatus:(BOOL)selectedStatus {
+    if (selectedStatus) {
         self.titleLabel.textColor = self.titleSelectedColor;
     }
     else{
